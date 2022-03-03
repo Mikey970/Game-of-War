@@ -14,7 +14,7 @@ class Deck {
   }
   createDeck() {
     let rankArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-    let scoreArr = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King']
+    let scoreArr = [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace',]
     let suitArr = ['clubs', 'hearts', 'spades', 'diamonds']
     for (let i = 0; i < suitArr.length; i++) {
       for (let j = 0; j < rankArr.length; j++) {
@@ -67,21 +67,22 @@ function compareScores() {
     
   
   if (score1 > score2) {
+    console.log("Player 1 Won, Cards held " + player1.deck1.length + " Card Played by Player 1: " + player1.deck1[0].score + " Card Played by Player 2: " + player2.deck2[0].score)
+   
     player1.deck1.push(player1.deck1[0])
     player1.deck1.push(player2.deck2[0])
     player1.deck1.shift()
     player2.deck2.shift()
-    console.log("Player 1 Won, Cards held " + player1.deck1.length + " Card Played by Player 1: " + score1 + " Card Played by Player 2: " + score2)
    
     
   } else if (score1 < score2) {
-    
+    console.log("Player 2 Won, Cards held: " + player2.deck2.length + " Card Played by Player 1: "+ player1.deck1[0].score + " Card Played by Player 2: " + player2.deck2[0].score)
+       
     player2.deck2.push(player2.deck2[0])
     player2.deck2.push(player1.deck1[0])
     player1.deck1.shift()
     player2.deck2.shift()
-    console.log("Player 2 Won, Cards held: " + player2.deck2.length + " Card Played by Player 1: "+ score1 + " Card Played by Player 2: " + score2)
-      
+   
  
   } else if (score1 == score2) {
     if (player2.deck2.length <= 3 || player1.deck1.length <= 3) {
