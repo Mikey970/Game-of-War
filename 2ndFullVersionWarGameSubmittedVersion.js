@@ -85,7 +85,7 @@ function compareScores() {
    
  
   } else if (score1 == score2) {
-    if (player2.deck2.length <= 3 || player1.deck1.length <= 3) {
+    if (player2.deck2.length < 3 || player1.deck1.length < 3) {
       loopBreak = true;
       console.log("GAME OVER NOT ENOUGH CARDS FOR WAR... FINAL SCORE Player 1: " + player1.deck1.length + " Player 2: " + player2.deck2.length)
     }
